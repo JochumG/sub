@@ -1,0 +1,8 @@
+version: "3"
+services:
+
+ sub:
+      image: sub
+      container_name: subscribe
+      expose:
+        - 1883
