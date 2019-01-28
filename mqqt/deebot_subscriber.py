@@ -23,8 +23,8 @@ def on_message(client, userdata, msg):
     action =str(msg.payload)
     print(msg.topic+" "+action)
     decider = {
-	"stop": print ("--> sending IR command to Dock Bot"),
-	"start": print ("--> sending IR command to vaccuum")
+	"stop": print("--> sending IR command to Dock Bot"),
+	"start": print("--> sending IR command to vaccuum")
 	}
     decider.get(action,"A clue, No")
 	# more callbacks, etc
