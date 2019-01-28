@@ -13,7 +13,7 @@ def on_connect(client, userdata, flags, rc):
     print("Deebot Connected (code "+str(rc)+")")
     # Subscribing in on_connect() means that if we lose the connection and
     # reconnect then subscriptions will be renewed.
-    print("Suscribing to be able to start Deebot")
+    print("Subcribing to be able to start Deebot")
     client.subscribe(MQTT_PATH)
 
     
