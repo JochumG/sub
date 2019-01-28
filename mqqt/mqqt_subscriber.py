@@ -1,6 +1,6 @@
 import paho.mqtt.client as mqtt
  
-MQTT_SERVER = "172.17.0.0"
+MQTT_SERVER = "192.168.0.60"
 MQTT_PATH = "sensordata"
  
 # The callback for when the client receives a CONNACK response from the server.
