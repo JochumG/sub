@@ -16,19 +16,18 @@ def on_connect(client, userdata, flags, rc):
     print("Suscribing to be able to start Deebot")
     client.subscribe(MQTT_PATH)
 
+    
+	
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
- action =str(msg.payload)
- print(msg.topic+" "+action)
- switch (action) ;
-  case "stop": print ("--> sending IR command to Dock Bot");
-               break;
-  case "start":print ("--> sending IR command to vaccuum");
-               break;
-  default:     print("--> A clue: No");
-               break;
-
-# more callbacks, etc
+    action =str(msg.payload)
+    print(msg.topic+" "+action)
+    decider = {
+	"stop": print ("--> sending IR command to Dock Bot"),
+	"start": print ("--> sending IR command to vaccuum")
+	}
+    decider.get(action,"A clue, No")
+	# more callbacks, etc
 client = mqtt.Client("script")
 client.on_connect = on_connect
 client.on_message = on_message
