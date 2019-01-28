@@ -20,13 +20,12 @@ def on_connect(client, userdata, flags, rc):
 	
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
-    
-    print(msg.topic+" "+msg.payload)
-    decider = {
-	"stop": print ("--> sending IR command to Dock Bot"),
-	"start": print ("--> sending IR command to vaccuum")
-	}
-    decider.get(msg.payload,"A clue, No")
+	print(msg.topic+" "+msg.payload)
+	if msg.payload=="stop":
+	   print ("IRC command for stop bot")
+	elif msg.payload=="start":
+         print ("IRC command for start bot")
+
 	# more callbacks, etc
 client = mqtt.Client("script")
 client.on_connect = on_connect
